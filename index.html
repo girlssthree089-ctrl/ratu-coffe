@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratu Coffe - Authentic Coffee & Snacks</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FDF8F2;
+            color: #432d23;
+        }
+
+        /* Background Aesthetic Cream Doodle Coffee */
+        .aesthetic-bg {
+            background-color: #f5eedf;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%23a2866f' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round' opacity='0.55'%3E%3Cpath d='M30 40 L60 40 L55 70 C55 80, 35 80, 35 70 Z'/%3E%3Cpath d='M60 45 C66 45, 66 58, 57 58'/%3E%3Cpath d='M40 33 Q43 25, 40 18'/%3E%3Cpath d='M50 33 Q53 25, 50 18'/%3E%3Cpath d='M130 25 L160 25 L155 70 L135 70 Z'/%3E%3Cpath d='M126 25 L164 25 L162 18 L128 18 Z'/%3E%3Cpath d='M133 42 L157 42 L155 52 L135 52 Z'/%3E%3Cpath d='M210 30 C 200 15, 225 10, 230 25 C 235 40, 215 45, 210 30 Z' fill='%23a2866f' fill-opacity='0.2'/%3E%3Cpath d='M213 18 Q220 25, 225 28'/%3E%3Cpath d='M80 150 C 70 135, 95 130, 100 145 C 105 160, 85 165, 80 150 Z' fill='%23a2866f' fill-opacity='0.2'/%3E%3Cpath d='M83 138 Q90 145, 95 148'/%3E%3Cpath d='M270 230 C 260 215, 285 210, 290 225 C 295 240, 275 245, 270 230 Z' fill='%23a2866f' fill-opacity='0.2'/%3E%3Cpath d='M273 218 Q280 225, 285 228'/%3E%3Cpath d='M220 130 L250 130 L260 170 C260 180, 210 180, 210 170 Z'/%3E%3Cpath d='M210 140 L195 145 L195 165 L212 160'/%3E%3Cpath d='M250 140 Q270 150, 258 170'/%3E%3Cpath d='M130 230 C130 260, 180 260, 180 230 Z'/%3E%3Cpath d='M120 230 L190 230'/%3E%3Cpath d='M180 235 C188 235, 188 248, 178 248'/%3E%3Cpath d='M115 258 L195 258'/%3E%3Ctext x='30' y='180' font-family='sans-serif' font-size='16' fill='%23a2866f' stroke='none' opacity='0.75'%3EAmericano%3C/text%3E%3Ctext x='180' y='200' font-family='sans-serif' font-size='16' fill='%23a2866f' stroke='none' opacity='0.75'%3ECuppucino%3C/text%3E%3Ctext x='30' y='285' font-family='sans-serif' font-size='16' fill='%23a2866f' stroke='none' opacity='0.75'%3EEspresso%3C/text%3E%3Ctext x='180' y='285' font-family='sans-serif' font-size='16' fill='%23a2866f' stroke='none' opacity='0.75'%3ELatte%3C/text%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 300px 300px;
+            position: relative;
+        }
+
+        /* Curved Brown Edge Accent */
+        .aesthetic-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 45px;
+            background: linear-gradient(to right, transparent, rgba(40, 26, 20, 0.2));
+            border-right: 18px solid #281a14;
+            border-top-left-radius: 100% 50%;
+            border-bottom-left-radius: 100% 50%;
+            pointer-events: none;
+        }
+
+        /* Ambient Glassmorphism Hero & Login Background */
+        .login-cool-bg {
+            background: linear-gradient(135deg, rgba(31, 18, 12, 0.92) 0%, rgba(61, 36, 23, 0.88) 40%, rgba(92, 61, 46, 0.85) 75%, rgba(171, 129, 92, 0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-cool-bg::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 163, 115, 0.35) 0%, rgba(0,0,0,0) 70%);
+            top: -100px;
+            left: -100px;
+            animation: pulse-glow 8s infinite alternate ease-in-out;
+        }
+
+        .login-cool-bg::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(171, 129, 92, 0.3) 0%, rgba(0,0,0,0) 70%);
+            bottom: -150px;
+            right: -150px;
+            animation: pulse-glow 10s infinite alternate-reverse ease-in-out;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.7; }
+            100% { transform: scale(1.2) translate(30px, -20px); opacity: 1; }
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(31, 18, 12, 0.88) 0%, rgba(77, 49, 34, 0.80) 100%), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=1600') center/cover;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4EFE6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ab815c;
+            border-radius: 4px;
+        }
+
+        /* Thermal Struk Print Style */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-receipt, #printable-receipt * {
+                visibility: visible;
+            }
+            #printable-receipt {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                max-width: 380px;
+                margin: 0 auto;
+                padding: 15px;
+                background: white;
+                color: black;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-200 selection:text-amber-950">
+
+    <!-- HALAMAN LOGIN -->
+    <div id="login-page-view" class="fixed inset-0 z-50 login-cool-bg flex items-center justify-center p-4">
+        <div class="glass-card rounded-3xl max-w-4xl w-full grid md:grid-cols-2 overflow-hidden relative z-10 shadow-2xl border border-white/20">
+            <!-- Left Banner -->
+            <div class="relative hidden md:flex flex-col justify-between p-8 bg-cover bg-center text-white min-h-[460px]" style="background-image: linear-gradient(to bottom, rgba(31, 18, 12, 0.3), rgba(31, 18, 12, 0.85)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800');">
+                <div class="flex items-center gap-2">
+                    <div class="w-9 h-9 rounded-full bg-amber-500/20 backdrop-blur-md flex items-center justify-center border border-amber-400/40">
+                        <svg class="w-5 h-5 text-amber-300 fill-current" viewBox="0 0 24 24">
+                            <path d="M5 16c0 3.87 3.13 7 7 7s7-3.13 7-7v-2H5v2zm15-4V8h-2V6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v2H4v4h16zm-4-6v2H8V6h8zm4 4v2h-2v-2h2zM3 3l2.5 2L8 3l2.5 2L13 3l2.5 2L18 3l2.5 2L23 3v2H1L3 3z"/>
+                        </svg>
+                    </div>
+                    <span class="font-serif font-bold text-lg text-amber-100 tracking-wide">Ratu Coffe</span>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="inline-block px-3 py-1 bg-amber-500/30 backdrop-blur-md border border-amber-300/30 rounded-full text-[11px] font-semibold text-amber-200 tracking-wider uppercase">
+                        <i class="fa-solid fa-mug-hot mr-1"></i> Special Coffee Brew
+                    </span>
+                    <h3 class="font-serif text-2xl font-bold leading-tight text-white">Selamat Datang di Ratu Coffe</h3>
+                    <p class="text-xs text-amber-200/90 leading-relaxed font-light">
+                        Nikmati racikan kopi autentik dan cemilan lezat dengan suasana hangat yang aesthetic. Silakan masuk untuk mengakses katalog.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Form -->
+            <div class="p-8 sm:p-10 flex flex-col justify-center bg-white/95">
+                <div class="text-center md:text-left space-y-2 mb-6">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-amber-950 to-amber-800 flex md:hidden items-center justify-center mx-auto shadow-xl border-2 border-amber-400/50">
+                        <svg class="w-9 h-9 text-amber-300 fill-current" viewBox="0 0 24 24">
+                            <path d="M5 16c0 3.87 3.13 7 7 7s7-3.13 7-7v-2H5v2zm15-4V8h-2V6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v2H4v4h16zm-4-6v2H8V6h8zm4 4v2h-2v-2h2zM3 3l2.5 2L8 3l2.5 2L13 3l2.5 2L18 3l2.5 2L23 3v2H1L3 3z"/>
+                        </svg>
+                    </div>
+                    <h2 class="font-serif text-3xl font-bold text-amber-950 tracking-wide">Portal Kasir & User</h2>
+                    <p class="text-xs text-amber-800 font-medium">Masukan Akun untuk Membuka Katalog Ratu Coffe</p>
+                </div>
+
+                <form id="standalone-login-form" onsubmit="handleLogin(event)" class="space-y-4">
+                    <div id="login-error" class="hidden p-3 bg-red-100 border border-red-300 text-red-700 text-xs rounded-xl flex items-center gap-2">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span>Username atau password salah!</span>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-amber-900 mb-1.5">Username</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-700">
+                                <i class="fa-solid fa-user text-sm"></i>
+                            </span>
+                            <input type="text" id="login-username" required placeholder="ratucoffe" class="w-full pl-10 pr-4 py-3 rounded-xl border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-600 bg-white text-sm shadow-inner">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-amber-900 mb-1.5">Password</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-700">
+                                <i class="fa-solid fa-lock text-sm"></i>
+                            </span>
+                            <input type="password" id="login-password" required placeholder="•••••" class="w-full pl-10 pr-4 py-3 rounded-xl border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-600 bg-white text-sm shadow-inner">
+                        </div>
+                    </div>
+                    <div class="bg-amber-100/80 p-3 rounded-xl text-[11px] text-amber-950 border border-amber-300/50 shadow-xs">
+                        <i class="fa-solid fa-circle-info text-amber-800 mr-1"></i> Demo Login: <strong>ratucoffe</strong> | Pass: <strong>12345</strong>
+                    </div>
+                    <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-amber-900 to-amber-950 hover:from-amber-950 hover:to-black text-white font-bold rounded-xl transition-all text-sm shadow-xl flex items-center justify-center gap-2 transform active:scale-95">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span>Masuk ke Katalog</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN APP -->
+    <div id="main-app-view" class="hidden min-h-screen flex flex-col justify-between">
+        
+        <!-- HEADER -->
+        <header class="sticky top-0 z-40 bg-amber-950/95 backdrop-blur-md text-amber-100 shadow-md transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 p-0.5 shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full bg-amber-950 rounded-full flex items-center justify-center border border-amber-400/40">
+                            <svg class="w-7 h-7 text-amber-200 fill-current" viewBox="0 0 24 24">
+                                <path d="M5 16c0 3.87 3.13 7 7 7s7-3.13 7-7v-2H5v2zm15-4V8h-2V6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v2H4v4h16zm-4-6v2H8V6h8zm4 4v2h-2v-2h2zM3 3l2.5 2L8 3l2.5 2L13 3l2.5 2L18 3l2.5 2L23 3v2H1L3 3z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-bold tracking-wide text-amber-100 leading-none">Ratu Coffe</span>
+                        <span class="text-[10px] tracking-widest uppercase text-amber-300">Coffee & Snack Haven</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <a href="#beranda" class="hover:text-amber-300 transition-colors">Beranda</a>
+                    <a href="#katalog" class="hover:text-amber-300 transition-colors">Katalog Menu</a>
+                    <a href="#about" class="hover:text-amber-300 transition-colors">Tentang Kami</a>
+                    <a href="#kontak" class="hover:text-amber-300 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <button id="cart-btn" onclick="toggleCartModal()" class="relative p-2.5 rounded-full bg-amber-900 hover:bg-amber-800 text-amber-200 transition-all duration-200 border border-amber-700">
+                        <i class="fa-solid fa-mug-hot text-lg"></i>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-amber-400 text-amber-950 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center border-2 border-amber-950 hidden">0</span>
+                    </button>
+
+                    <div class="flex items-center gap-3">
+                        <span id="username-display" class="text-xs bg-amber-900 border border-amber-700 px-3 py-1.5 rounded-full font-medium text-amber-200 hidden md:inline-block"></span>
+                        <button onclick="handleLogout()" class="px-4 py-2 rounded-full bg-red-800/80 hover:bg-red-700 text-white font-semibold text-xs transition-all duration-200 flex items-center gap-1.5">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+
+                    <button onclick="toggleMobileNav()" class="md:hidden p-2 text-amber-200 hover:text-white">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Nav -->
+            <div id="mobile-nav" class="hidden md:hidden bg-amber-950 border-t border-amber-800 px-4 pt-3 pb-5 space-y-3">
+                <a href="#beranda" onclick="toggleMobileNav()" class="block text-amber-200 hover:text-white py-1.5">Beranda</a>
+                <a href="#katalog" onclick="toggleMobileNav()" class="block text-amber-200 hover:text-white py-1.5">Katalog Menu</a>
+                <a href="#about" onclick="toggleMobileNav()" class="block text-amber-200 hover:text-white py-1.5">Tentang Kami</a>
+                <a href="#kontak" onclick="toggleMobileNav()" class="block text-amber-200 hover:text-white py-1.5">Kontak</a>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            <!-- HERO -->
+            <section id="beranda" class="relative hero-gradient text-white py-24 md:py-36 px-4 flex items-center justify-center">
+                <div class="max-w-4xl mx-auto text-center space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-900/80 border border-amber-500/30 text-amber-200 text-xs sm:text-sm tracking-wider uppercase backdrop-blur-sm">
+                        <i class="fa-solid fa-crown text-amber-400"></i> Warm Cafe & Creamy Delights
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-amber-100 leading-tight">
+                        Nikmati Cita Rasa Terbaik di <span class="text-amber-400 italic">Ratu Coffe</span>
+                    </h1>
+                    <p class="text-amber-200 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                        Sajikan momen kehangatan bersama racikan kopi khas, kesegaran squash buah alami, serta cemilan lezat pelengkap harimu.
+                    </p>
+                    <div class="pt-4 flex flex-wrap justify-center gap-4">
+                        <a href="#katalog" class="px-8 py-3.5 rounded-full bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2">
+                            <i class="fa-solid fa-mug-saucer"></i>
+                            <span>Lihat Katalog Menu</span>
+                        </a>
+                        <a href="#about" class="px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-amber-100 border border-white/20 font-semibold text-sm transition-all duration-300 backdrop-blur-sm">
+                            Tentang Kami
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KATALOG SECTION -->
+            <section id="katalog" class="py-20 px-4 sm:px-6 lg:px-8 bg-amber-50/90 border-y border-amber-300/60 shadow-xl">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center space-y-3 mb-10">
+                        <span class="text-xs font-bold uppercase tracking-widest text-amber-950 bg-amber-200/90 border border-amber-400/50 px-4 py-1.5 rounded-full shadow-md backdrop-blur-md">Pilihan Menu Spesial</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-amber-950">Katalog Ratu Coffe</h2>
+                        <p class="text-amber-900 max-w-xl mx-auto text-sm font-medium">Pilih hidangan favoritmu dari pilihan olahan kopi, racikan minuman segar, dan cemilan lezat.</p>
+                    </div>
+
+                    <!-- Filter Tabs -->
+                    <div class="flex justify-center gap-3 mb-10 flex-wrap">
+                        <button onclick="filterCategory('all')" id="btn-cat-all" class="cat-filter-btn active-cat px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 bg-amber-950 text-amber-100 shadow-lg font-bold">
+                            Semua Menu
+                        </button>
+                        <button onclick="filterCategory('minuman')" id="btn-cat-minuman" class="cat-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 bg-white/80 text-amber-950 border border-amber-300 hover:bg-white backdrop-blur-md shadow-xs">
+                            <i class="fa-solid fa-glass-water mr-1.5 text-amber-800"></i> Minuman
+                        </button>
+                        <button onclick="filterCategory('cemilan')" id="btn-cat-cemilan" class="cat-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 bg-white/80 text-amber-950 border border-amber-300 hover:bg-white backdrop-blur-md shadow-xs">
+                            <i class="fa-solid fa-cookie-bite mr-1.5 text-amber-800"></i> Cemilan
+                        </button>
+                    </div>
+
+                    <!-- Cards Grid -->
+                    <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- TENTANG KAMI -->
+            <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-amber-50/70 border-b border-amber-200">
+                <div class="max-w-5xl mx-auto space-y-12">
+                    <div class="text-center space-y-3">
+                        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 bg-amber-200/60 px-3 py-1 rounded-full">Cerita & Komitmen</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-amber-950">Tentang Ratu Coffe</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-10 items-center">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-amber-600 to-amber-400 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=800" alt="Ratu Coffe Atmosphere" class="relative rounded-2xl shadow-xl object-cover w-full h-80">
+                        </div>
+                        <div class="space-y-4 text-amber-900 leading-relaxed text-sm sm:text-base">
+                            <p class="font-medium text-amber-950">
+                                Selamat datang di <strong class="text-amber-800">Ratu Coffe</strong>, tempat berkumpul hangat bagi para pecinta kopi dan pencari suasana bersantai yang aesthetic.
+                            </p>
+                            <p>
+                                Kami menyajikan berbagai varian rasa kopi berkualitas, olahan rasa manis khas matcha dan caramel, serta minuman squash buah dingin yang menyegarkan. Tak lengkap tanpa aneka hidangan cemilan hangat seperti kentang goreng dan nugget yang siap menemani momen berhargamu.
+                            </p>
+                            <div class="pt-2 flex items-center gap-4 text-amber-800 text-sm font-semibold">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check-circle text-amber-600"></i> Biji Kopi Pilihan
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check-circle text-amber-600"></i> Tempat Aesthetic
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logo at Bottom -->
+                    <div class="pt-10 border-t border-amber-200/80 text-center flex flex-col items-center justify-center space-y-3">
+                        <div class="w-20 h-20 rounded-full bg-amber-950 flex items-center justify-center shadow-lg border-2 border-amber-400/50">
+                            <svg class="w-11 h-11 text-amber-200 fill-current" viewBox="0 0 24 24">
+                                <path d="M5 16c0 3.87 3.13 7 7 7s7-3.13 7-7v-2H5v2zm15-4V8h-2V6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v2H4v4h16zm-4-6v2H8V6h8zm4 4v2h-2v-2h2zM3 3l2.5 2L8 3l2.5 2L13 3l2.5 2L18 3l2.5 2L23 3v2H1L3 3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-amber-950 tracking-wide">Ratu Coffe</h3>
+                        <p class="text-xs text-amber-800 italic">"Cita Rasa Ratu dalam Setiap Tegukan"</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KONTAK -->
+            <section id="kontak" class="py-16 px-4 sm:px-6 lg:px-8 bg-amber-100/60 border-b border-amber-200">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center space-y-2 mb-12">
+                        <span class="text-xs font-bold uppercase tracking-widest text-amber-700">Hubungi Kami</span>
+                        <h2 class="font-serif text-3xl font-bold text-amber-950">Lokasi & Kontak</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/6283833443114" target="_blank" class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-amber-200 flex flex-col items-center text-center group transition-all">
+                            <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <h3 class="font-bold text-amber-950 text-lg mb-1">WhatsApp</h3>
+                            <p class="text-sm text-amber-800">083833443114</p>
+                            <span class="mt-4 text-xs font-semibold text-emerald-700 flex items-center gap-1">Kirim Pesan <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/rcoffee._?psln=MXV1N2g3dXFkeWZ1bQ==" target="_blank" class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-amber-200 flex flex-col items-center text-center group transition-all">
+                            <div class="w-14 h-14 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <h3 class="font-bold text-amber-950 text-lg mb-1">Instagram</h3>
+                            <p class="text-sm text-amber-800">@rcoffee._</p>
+                            <span class="mt-4 text-xs font-semibold text-pink-700 flex items-center gap-1">Kunjungi Profil <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                        </a>
+
+                        <!-- Maps -->
+                        <a href="https://maps.app.goo.gl/gdwJm6gW4bkix4oD7" target="_blank" class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-amber-200 flex flex-col items-center text-center group transition-all">
+                            <div class="w-14 h-14 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <h3 class="font-bold text-amber-950 text-lg mb-1">Google Maps</h3>
+                            <p class="text-sm text-amber-800">Petunjuk Arah Lokasi Outlet</p>
+                            <span class="mt-4 text-xs font-semibold text-amber-800 flex items-center gap-1">Buka Peta <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="bg-amber-950 text-amber-300 py-10 border-t border-amber-900">
+            <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+                <div class="flex items-center justify-center gap-2">
+                    <svg class="w-6 h-6 text-amber-400 fill-current" viewBox="0 0 24 24">
+                        <path d="M5 16c0 3.87 3.13 7 7 7s7-3.13 7-7v-2H5v2zm15-4V8h-2V6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v2H4v4h16zm-4-6v2H8V6h8zm4 4v2h-2v-2h2zM3 3l2.5 2L8 3l2.5 2L13 3l2.5 2L18 3l2.5 2L23 3v2H1L3 3z"/>
+                    </svg>
+                    <span class="font-serif text-xl font-bold text-amber-100">Ratu Coffe</span>
+                </div>
+                <p class="text-xs text-amber-400">©️ 2026 Ratu Coffe. Seluruh Hak Cipta Dilindungi.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- CART MODAL -->
+    <div id="cart-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex justify-end">
+        <div class="bg-white w-full max-w-md h-full flex flex-col shadow-2xl">
+            <div class="p-4 bg-amber-950 text-amber-100 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-mug-hot text-amber-400"></i>
+                    <h3 class="font-serif font-bold text-lg">Keranjang Pesanan</h3>
+                </div>
+                <button onclick="toggleCartModal()" class="text-amber-300 hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <div id="cart-items" class="flex-grow overflow-y-auto p-4 space-y-3 bg-amber-50/50">
+                <!-- Cart list rendered by JS -->
+            </div>
+
+            <div class="p-4 bg-white border-t border-amber-200 space-y-3">
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-amber-800">Total Item:</span>
+                    <span id="cart-total-qty" class="font-bold text-amber-950">0</span>
+                </div>
+                <div class="flex justify-between items-center text-base font-bold">
+                    <span class="text-amber-950">Total Tagihan:</span>
+                    <span id="cart-total-price" class="text-amber-800 font-serif text-lg">Rp 0</span>
+                </div>
+                <button onclick="proceedToCheckout()" class="w-full py-3 bg-amber-800 hover:bg-amber-900 text-white font-bold rounded-xl shadow transition-colors flex items-center justify-center gap-2 text-sm">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Lanjut ke Pembayaran</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAYMENT MODAL -->
+    <div id="payment-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-amber-200 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-amber-400 hover:text-amber-700">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h3 class="font-serif text-2xl font-bold text-amber-950 mb-1">Metode Pembayaran</h3>
+            <p class="text-xs text-amber-800 mb-4">Selesaikan transaksi pembayaran untuk mencetak struk.</p>
+
+            <div class="bg-amber-50 p-3 rounded-lg border border-amber-200 mb-4 space-y-1 text-xs">
+                <div class="flex justify-between">
+                    <span class="text-amber-800">Total Bayar:</span>
+                    <span id="pay-total" class="font-bold text-amber-950">Rp 0</span>
+                </div>
+            </div>
+
+            <div class="space-y-3 mb-6">
+                <label class="block text-xs font-semibold text-amber-900">Pilih Metode:</label>
+                
+                <label class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer hover:bg-amber-50 transition-colors border-amber-300">
+                    <input type="radio" name="payment-method" value="qris" checked class="text-amber-800 focus:ring-amber-500">
+                    <div class="flex items-center gap-2 text-sm font-medium">
+                        <i class="fa-solid fa-qrcode text-amber-800 text-lg"></i>
+                        <span>QRIS (All Payment)</span>
+                    </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer hover:bg-amber-50 transition-colors border-amber-300">
+                    <input type="radio" name="payment-method" value="cash" class="text-amber-800 focus:ring-amber-500">
+                    <div class="flex items-center gap-2 text-sm font-medium">
+                        <i class="fa-solid fa-money-bill-wave text-emerald-600 text-lg"></i>
+                        <span>Tunai / Cash (Kasir)</span>
+                    </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer hover:bg-amber-50 transition-colors border-amber-300">
+                    <input type="radio" name="payment-method" value="bank" class="text-amber-800 focus:ring-amber-500">
+                    <div class="flex items-center gap-2 text-sm font-medium">
+                        <i class="fa-solid fa-building-columns text-blue-600 text-lg"></i>
+                        <span>Transfer Bank</span>
+                    </div>
+                </label>
+            </div>
+
+            <div class="mb-5">
+                <label class="block text-xs font-semibold text-amber-900 mb-1">Nama Pemesan (Atas Nama)</label>
+                <input type="text" id="cust-name" placeholder="Contoh: Budi" class="w-full px-3 py-2 rounded-lg border border-amber-300 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+            </div>
+
+            <button onclick="processPayment()" class="w-full py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl shadow transition-colors text-sm flex items-center justify-center gap-2">
+                <i class="fa-solid fa-check"></i>
+                <span>Konfirmasi & Cetak Struk</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- STRUK MODAL -->
+    <div id="receipt-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-sm w-full p-6 shadow-2xl relative">
+            <button onclick="closeReceiptModal()" class="no-print absolute top-3 right-3 text-gray-400 hover:text-gray-700">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div id="printable-receipt" class="font-mono text-xs space-y-3 text-gray-800">
+                <div class="text-center space-y-1 border-b border-dashed border-gray-400 pb-3">
+                    <h2 class="font-bold text-base text-black uppercase">RATU COFFE</h2>
+                    <p class="text-[10px] leading-tight">Jl. Coffee Haven No. 1<br>WA: 083833443114</p>
+                </div>
+
+                <div class="space-y-1 text-[11px]">
+                    <div class="flex justify-between">
+                        <span>No. Transaksi:</span>
+                        <span id="rec-id" class="font-bold">#RC-1001</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Tanggal:</span>
+                        <span id="rec-date">2026-03-30 14:00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Pelanggan:</span>
+                        <span id="rec-cust" class="font-bold">Pelanggan</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Metode Bayar:</span>
+                        <span id="rec-method" class="uppercase">QRIS</span>
+                    </div>
+                </div>
+
+                <div class="border-t border-b border-dashed border-gray-400 py-2 space-y-1.5" id="rec-items">
+                    <!-- Items JS -->
+                </div>
+
+                <div class="space-y-1 pt-1 font-bold text-sm">
+                    <div class="flex justify-between">
+                        <span>TOTAL:</span>
+                        <span id="rec-total">Rp 0</span>
+                    </div>
+                </div>
+
+                <div class="text-center pt-3 border-t border-dashed border-gray-400 space-y-1 text-[10px]">
+                    <p class="font-bold">TERIMA KASIH ATAS KUNJUNGAN ANDA</p>
+                    <p>Instagram: @rcoffee._</p>
+                    <p class="italic">"Nikmati Sensasi Kopi Ratu"</p>
+                </div>
+            </div>
+
+            <div class="no-print pt-5 flex gap-3">
+                <button onclick="window.print()" class="flex-1 py-2.5 bg-amber-900 hover:bg-amber-950 text-white font-bold rounded-lg text-xs flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-print"></i> Cetak Struk
+                </button>
+                <button onclick="closeReceiptModal()" class="px-4 py-2.5 border border-amber-300 text-amber-900 font-semibold rounded-lg text-xs hover:bg-amber-50">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JavaScript Terintegrasi Aman -->
+    <script>
+        /* DATA MENU RATU COFFE */
+        const initialMenuData = [
+            // MINUMAN
+            {
+                id: 'm1',
+                name: 'Americano',
+                category: 'minuman',
+                price: 15000,
+                image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=600',
+                desc: 'Espresso murni berkualitas dengan tambahan air panas/dingin yang mantap.'
+            },
+            {
+                id: 'm2',
+                name: 'Cappucino',
+                category: 'minuman',
+                price: 18000,
+                image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=600',
+                desc: 'Perpaduan seimbang espresso, susu hangat, dan foam susu yang lembut.'
+            },
+            {
+                id: 'm3',
+                name: 'Matcha Latte',
+                category: 'minuman',
+                price: 20000,
+                image: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&q=80&w=600',
+                desc: 'Bubuk matcha Jepang otentik yang creamy dipadu susu segar.'
+            },
+            {
+                id: 'm4',
+                name: 'Caramel Latte',
+                category: 'minuman',
+                price: 22000,
+                image: 'https://images.unsplash.com/photo-1599390053916-2c9dd0cf3b01?auto=format&fit=crop&q=80&w=600',
+                desc: 'Latte lezat dengan sentuhan sirup karamel manis gurih.'
+            },
+            {
+                id: 'm5',
+                name: 'Coklat Latte',
+                category: 'minuman',
+                price: 20000,
+                image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=600',
+                desc: 'Cokelat kaya rasa dikombinasikan dengan susu creamy.'
+            },
+            {
+                id: 'm6',
+                name: 'Hazelnut',
+                category: 'minuman',
+                price: 20000,
+                image: 'https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&q=80&w=600',
+                desc: 'Aroma kacang hazelnut yang harum dengan paduan latte manis.'
+            },
+            {
+                id: 'm7',
+                name: 'Milo',
+                category: 'minuman',
+                price: 15000,
+                image: 'https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&q=80&w=600',
+                desc: 'Minuman cokelat malt Milo favorit semua usia.'
+            },
+            {
+                id: 'm8',
+                name: 'Squash Lemon',
+                category: 'minuman',
+                price: 15000,
+                image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=600',
+                desc: 'Kesegaran perasan lemon alami dengan soda yang meletup-letup.'
+            },
+            {
+                id: 'm9',
+                name: 'Squash Strawberry',
+                category: 'minuman',
+                price: 15000,
+                image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&q=80&w=600',
+                desc: 'Rasa stroberi manis asam yang menyegarkan di hari panas.'
+            },
+            {
+                id: 'm10',
+                name: 'Squash Leci',
+                category: 'minuman',
+                price: 15000,
+                image: 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?auto=format&fit=crop&q=80&w=600',
+                desc: 'Aroma manis buah leci yang dingin dan segar berkilau.'
+            },
+            {
+                id: 'm11',
+                name: 'Sanger',
+                category: 'minuman',
+                price: 16000,
+                image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&q=80&w=600',
+                desc: 'Kopi khas racikan dengan kental manis pas.',
+                hasVariant: true
+            },
+
+            // CEMILAN
+            {
+                id: 'c1',
+                name: 'Kentang Goreng',
+                category: 'cemilan',
+                price: 15000,
+                image: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&q=80&w=600',
+                desc: 'French fries renyah gurih disajikan hangat dengan saus.'
+            },
+            {
+                id: 'c2',
+                name: 'Mie Instan',
+                category: 'cemilan',
+                price: 12000,
+                image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&q=80&w=600',
+                desc: 'Mie instan selera nusantara dimasak nikmat berkaldu/goreng.'
+            },
+            {
+                id: 'c3',
+                name: 'Nugget',
+                category: 'cemilan',
+                price: 15000,
+                image: 'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&q=80&w=600',
+                desc: 'Nugget ayam goreng keemasan yang gurih di luar & lembut di dalam.'
+            }
+        ];
+
+        // User Storage & State
+        let currentUser = localStorage.getItem('ratu_user') || null;
+        let cart = [];
+
+        // Storage Helper
+        function getCustomImages() {
+            try {
+                const key = currentUser ? `ratu_custom_images_${currentUser}` : 'ratu_custom_images_default';
+                return JSON.parse(localStorage.getItem(key)) || {};
+            } catch (e) {
+                return {};
+            }
+        }
+
+        function saveCustomImage(itemId, base64Url) {
+            const customImgs = getCustomImages();
+            customImgs[itemId] = base64Url;
+            const key = currentUser ? `ratu_custom_images_${currentUser}` : 'ratu_custom_images_default';
+            localStorage.setItem(key, JSON.stringify(customImgs));
+        }
+
+        // Render Menu Cards
+        function renderMenu(category = 'all') {
+            const grid = document.getElementById('menu-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            const customImages = getCustomImages();
+
+            const filtered = category === 'all' 
+                ? initialMenuData 
+                : initialMenuData.filter(item => item.category === category);
+
+            filtered.forEach(item => {
+                const imageSrc = customImages[item.id] || item.image;
+
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-amber-200/80 flex flex-col group';
+                
+                card.innerHTML = `
+                    <div class="relative overflow-hidden aspect-[4/3] bg-amber-100">
+                        <img id="img-preview-${item.id}" src="${imageSrc}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x450/432d23/ffffff?text=${encodeURIComponent(item.name)}'">
+                        
+                        <span class="absolute top-3 right-3 bg-amber-950/80 text-amber-100 text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-md">
+                            ${item.category === 'minuman' ? '🥤 Minuman' : '🍟 Cemilan'}
+                        </span>
+
+                        <label class="absolute bottom-3 right-3 bg-amber-950/90 hover:bg-black text-amber-300 text-[11px] font-semibold px-2.5 py-1.5 rounded-lg border border-amber-400/40 cursor-pointer backdrop-blur-md transition-all shadow-md flex items-center gap-1.5">
+                            <i class="fa-solid fa-camera"></i>
+                            <span>Ganti Foto</span>
+                            <input type="file" accept="image/*" class="hidden" onchange="uploadCustomImage(event, '${item.id}')">
+                        </label>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="font-bold text-amber-950 text-lg group-hover:text-amber-700 transition-colors">${item.name}</h3>
+                                <span class="font-serif font-bold text-amber-800">Rp ${item.price.toLocaleString('id-ID')}</span>
+                            </div>
+                            <p class="text-xs text-amber-900/80 line-clamp-2">${item.desc}</p>
+                        </div>
+
+                        ${item.hasVariant ? `
+                            <div>
+                                <label class="text-[11px] font-semibold text-amber-900 block mb-1">Pilih Varian:</label>
+                                <select id="variant-${item.id}" class="w-full text-xs p-2 rounded-lg border border-amber-300 bg-amber-50 focus:outline-none">
+                                    <option value="Panas">Panas (Hot)</option>
+                                    <option value="Dingin">Dingin (Ice)</option>
+                                </select>
+                            </div>
+                        ` : ''}
+
+                        <button onclick="addToCart('${item.id}')" class="w-full py-2.5 bg-amber-900 hover:bg-amber-800 text-white rounded-xl font-semibold text-xs transition-colors flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-plus text-amber-400"></i>
+                            <span>Tambah Ke Keranjang</span>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function uploadCustomImage(event, itemId) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Image = e.target.result;
+                saveCustomImage(itemId, base64Image);
+                
+                const imgElem = document.getElementById(`img-preview-${itemId}`);
+                if (imgElem) {
+                    imgElem.src = base64Image;
+                }
+                alert('Foto menu berhasil diperbarui dan tersimpan di akun Anda!');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function filterCategory(cat) {
+            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-950', 'text-amber-100', 'shadow-lg', 'font-bold');
+                btn.classList.add('bg-white/80', 'text-amber-950', 'border', 'border-amber-300');
+            });
+
+            const activeBtn = document.getElementById(`btn-cat-${cat}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white/80', 'text-amber-950', 'border', 'border-amber-300');
+                activeBtn.classList.add('bg-amber-950', 'text-amber-100', 'shadow-lg', 'font-bold');
+            }
+
+            renderMenu(cat);
+        }
+
+        // Login & Logout Handlers
+        function handleLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('login-username').value;
+            const p = document.getElementById('login-password').value;
+
+            if (u === 'ratucoffe' && p === '12345') {
+                currentUser = u;
+                localStorage.setItem('ratu_user', u);
+                updateAuthView();
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        }
+
+        function handleLogout() {
+            currentUser = null;
+            localStorage.removeItem('ratu_user');
+            cart = [];
+            updateCartUI();
+            updateAuthView();
+            alert('Anda telah logout dari Ratu Coffe.');
+        }
+
+        function updateAuthView() {
+            const loginPage = document.getElementById('login-page-view');
+            const mainApp = document.getElementById('main-app-view');
+            const usernameDisplay = document.getElementById('username-display');
+
+            if (currentUser) {
+                loginPage.classList.add('hidden');
+                mainApp.classList.remove('hidden');
+                if (usernameDisplay) usernameDisplay.textContent = `👋 ${currentUser}`;
+                renderMenu('all');
+            } else {
+                loginPage.classList.remove('hidden');
+                mainApp.classList.add('hidden');
+                document.getElementById('login-error').classList.add('hidden');
+            }
+        }
+
+        // Cart Functions
+        function toggleCartModal() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function addToCart(itemId) {
+            const item = initialMenuData.find(m => m.id === itemId);
+            if (!item) return;
+
+            let variant = null;
+            if (item.hasVariant) {
+                const varElem = document.getElementById(`variant-${itemId}`);
+                if (varElem) variant = varElem.value;
+            }
+
+            const cartKey = variant ? `${item.id}-${variant}` : item.id;
+            const existing = cart.find(c => c.cartKey === cartKey);
+
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    cartKey: cartKey,
+                    id: item.id,
+                    name: item.name + (variant ? ` (${variant})` : ''),
+                    price: item.price,
+                    qty: 1
+                });
+            }
+
+            updateCartUI();
+            alert(`${item.name} berhasil ditambahkan ke keranjang!`);
+        }
+
+        function updateCartQty(cartKey, delta) {
+            const index = cart.findIndex(c => c.cartKey === cartKey);
+            if (index !== -1) {
+                cart[index].qty += delta;
+                if (cart[index].qty <= 0) {
+                    cart.splice(index, 1);
+                }
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            const badge = document.getElementById('cart-badge');
+            const totalQtyElem = document.getElementById('cart-total-qty');
+            const totalPriceElem = document.getElementById('cart-total-price');
+
+            if (!container) return;
+
+            container.innerHTML = '';
+            let totalQty = 0;
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-amber-800/60">
+                        <i class="fa-solid fa-cart-flatbed text-4xl mb-3"></i>
+                        <p class="text-xs">Keranjang Anda masih kosong</p>
+                    </div>
+                `;
+            } else {
+                cart.forEach(item => {
+                    totalQty += item.qty;
+                    totalPrice += item.price * item.qty;
+
+                    const row = document.createElement('div');
+                    row.className = 'bg-white p-3 rounded-xl border border-amber-200 flex items-center justify-between shadow-sm';
+                    row.innerHTML = `
+                        <div>
+                            <h4 class="font-bold text-amber-950 text-xs">${item.name}</h4>
+                            <p class="text-[11px] text-amber-800">Rp ${item.price.toLocaleString('id-ID')} x ${item.qty}</p>
+                        </div>
+                        <div class="flex items-center gap-2 bg-amber-50 rounded-lg p-1 border border-amber-200">
+                            <button onclick="updateCartQty('${item.cartKey}', -1)" class="w-6 h-6 rounded bg-white text-amber-950 flex items-center justify-center font-bold text-xs shadow-xs hover:bg-amber-200">-</button>
+                            <span class="text-xs font-bold px-1">${item.qty}</span>
+                            <button onclick="updateCartQty('${item.cartKey}', 1)" class="w-6 h-6 rounded bg-white text-amber-950 flex items-center justify-center font-bold text-xs shadow-xs hover:bg-amber-200">+</button>
+                        </div>
+                    `;
+                    container.appendChild(row);
+                });
+            }
+
+            totalQtyElem.textContent = totalQty;
+            totalPriceElem.textContent = `Rp ${totalPrice.toLocaleString('id-ID')}`;
+
+            if (totalQty > 0) {
+                badge.textContent = totalQty;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        // Payment & Receipt
+        function proceedToCheckout() {
+            if (cart.length === 0) {
+                alert('Keranjang Anda masih kosong!');
+                return;
+            }
+            toggleCartModal();
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            document.getElementById('pay-total').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+            document.getElementById('payment-modal').classList.remove('hidden');
+        }
+
+        function closePaymentModal() {
+            document.getElementById('payment-modal').classList.add('hidden');
+        }
+
+        function processPayment() {
+            const nameInput = document.getElementById('cust-name').value.trim() || 'Pelanggan';
+            const method = document.querySelector('input[name="payment-method"]:checked').value;
+
+            closePaymentModal();
+
+            const receiptId = '#RC-' + Math.floor(1000 + Math.random() * 9000);
+            const now = new Date();
+            const dateStr = now.getFullYear() + '-' + 
+                String(now.getMonth() + 1).padStart(2, '0') + '-' + 
+                String(now.getDate()).padStart(2, '0') + ' ' + 
+                String(now.getHours()).padStart(2, '0') + ':' + 
+                String(now.getMinutes()).padStart(2, '0');
+
+            document.getElementById('rec-id').textContent = receiptId;
+            document.getElementById('rec-date').textContent = dateStr;
+            document.getElementById('rec-cust').textContent = nameInput;
+            document.getElementById('rec-method').textContent = method.toUpperCase();
+
+            const itemsContainer = document.getElementById('rec-items');
+            itemsContainer.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+                const itemRow = document.createElement('div');
+                itemRow.className = 'space-y-0.5';
+                itemRow.innerHTML = `
+                    <div class="flex justify-between font-bold">
+                        <span>${item.name}</span>
+                        <span>Rp ${subtotal.toLocaleString('id-ID')}</span>
+                    </div>
+                    <div class="text-[10px] text-gray-600">
+                        ${item.qty} x Rp ${item.price.toLocaleString('id-ID')}
+                    </div>
+                `;
+                itemsContainer.appendChild(itemRow);
+            });
+
+            document.getElementById('rec-total').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+
+            cart = [];
+            updateCartUI();
+            document.getElementById('receipt-modal').classList.remove('hidden');
+        }
+
+        function closeReceiptModal() {
+            document.getElementById('receipt-modal').classList.add('hidden');
+        }
+
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobile-nav');
+            nav.classList.toggle('hidden');
+        }
+
+        // Initial Load
+        window.onload = function() {
+            updateAuthView();
+        };
+    </script>
+</body>
+</html>
